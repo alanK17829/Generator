@@ -1,0 +1,259 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: rgb(129, 240, 119);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.kontener {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 5px 5px 10px black;
+    backdrop-filter: blur(10px);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    background: rgb(108, 168, 28);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Główna sekcja */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Przyciski */
+.przycisk-glowny, .przycisk-pomocniczy, .przycisk-sukces {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    min-width: 200px;
+}
+
+.przycisk-glowny {
+    background: rgb(119, 119, 240);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.przycisk-glowny:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.przycisk-pomocniczy {
+    background: #f8f9fa;
+    color: #495057;
+    border: 2px solid #dee2e6;
+}
+
+.przycisk-pomocniczy:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+
+
+.przycisk-sukces:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+/* Wybierz wyzwanie */
+.sekcja-wyzwania {
+    text-align: center;
+}
+
+.wyswietlacz-wyzwania {
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.wyswietlacz-wyzwania:not(.ukryty) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.karta-wyzwania {
+    background: #f093fb;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.karta-wyzwania h2 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+#tekst-wyzwania {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.completed {
+    text-decoration: underline;
+    text-decoration-color: #28a745;
+    text-decoration-thickness: 3px;
+}
+
+/* Historia */
+.sekcja-historii {
+    text-align: center;
+}
+
+.wyswietlacz-historii {
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.wyswietlacz-historii:not(.ukryty) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wyswietlacz-historii h3 {
+    color: #495057;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+#lista-historii {
+    list-style: none;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#history-list li {
+    background: white;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+#history-list li:last-child {
+    margin-bottom: 0;
+}
+
+.empty-history {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Ukryte klasy */
+.ukryty {
+    display: none !important;
+}
+
+/* Animacje */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Rysowanie animation */
+.drawing {
+    animation: drawing 1s ease-in-out;
+}
+
+@keyframes drawing {
+    0%, 100% { opacity: 1; }
+    25% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+    75% { opacity: 0.3; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn-primary, .btn-secondary, .btn-success {
+        padding: 12px 25px;
+        font-size: 1rem;
+        min-width: 180px;
+    }
+
+    .challenge-card {
+        padding: 20px;
+    }
+
+    #challenge-text {
+        font-size: 1.1rem;
+    }
+}
