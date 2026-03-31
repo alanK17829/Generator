@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styl.css">
 </head>
 <body>
+    <div class="kontener">
+        <header>
+            <h1> Generator Codziennych Wyzwań</h1>
+            <p>Wylosuj swoje codzienne wyzwanie i zmień nawyki na lepsze!</p>
+        </header>
+
+        <main>
+            <section class="sekcja-wyzwania">
+                <button id="przycisk-losowania-wyzwania" class="przycisk-glowny">
+                     Wylosuj wyzwanie!
+                </button>
+
+                <div id="wyswietlacz-wyzwania" class="wyswietlacz-wyzwania ukryty">
+                    <div class="karta-wyzwania">
+                        <h2>Twoje wyzwanie na dziś:</h2>
+                        <p id="tekst-wyzwania"></p>
+                        <button id="przycisk-ukonczenia" class="przycisk-sukces ukryty">
+                             Ukończone!
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sekcja-historii">
+                <button id="przycisk-pokazania-historii" class="przycisk-pomocniczy">
+                     Pokaż historię
+                </button>
+
+                <div id="wyswietlacz-historii" class="wyswietlacz-historii ukryty">
+                    <h3>Ukończone wyzwania (dzisiejsza sesja):</h3>
+                    <ul id="lista-historii"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
     
 </body>
 </html>
