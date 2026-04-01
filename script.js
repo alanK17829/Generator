@@ -192,10 +192,7 @@ function handleShowHistory() {
     }
 }
 
-// Dodaj nasłuchiwacze zdarzeń
-drawChallengeBtn.addEventListener('click', handleDrawChallenge);
-completeBtn.addEventListener('click', handleCompleteChallenge);
-showHistoryBtn.addEventListener('click', handleShowHistory);
+
 
 // Inicjalizacja aplikacji
 document.addEventListener('DOMContentLoaded', () => {
@@ -204,4 +201,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Zaktualizuj UI
     updateUI();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Sprawdź czy trzeba zresetować dane
+    shouldResetData();
+
+    // Zaktualizuj UI
+    updateUI();
+
+    // 👇 DODAJ TE 3 LINIE
+    drawChallengeBtn.addEventListener('click', handleDrawChallenge);
+    completeBtn.addEventListener('click', handleCompleteChallenge);
+    showHistoryBtn.addEventListener('click', handleShowHistory);
 });
