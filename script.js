@@ -35,6 +35,7 @@ const completeBtn = document.getElementById('przycisk-ukonczenia');
 const showHistoryBtn = document.getElementById('przycisk-pokazania-historii');
 const historyDisplay = document.getElementById('wyswietlacz-historii');
 const historyList = document.getElementById('lista-historii');
+const resetChallengeBtn = document.getElementById('przycisk-resetowania-wyzwania');
 
 // Funkcje pomocnicze
 function getTodayString() {
@@ -192,7 +193,19 @@ function handleShowHistory() {
     }
 }
 
+function handleResetChallenge() {
+    localStorage.removeItem(TODAY_CHALLENGE_KEY);
+    localStorage.removeItem(COMPLETED_CHALLENGES_KEY);
+    localStorage.removeItem(LAST_RESET_KEY);
 
+    challengeText.textContent = '';
+    challengeDisplay.classList.add('ukryty');
+    challengeText.classList.remove('completed');
+    completeBtn.classList.add('ukryty');
+
+    updateHistory();
+    alert('Wyzwanie zostało zresetowane.');
+}
 
 // Inicjalizacja aplikacji
 document.addEventListener('DOMContentLoaded', () => {
@@ -201,17 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Zaktualizuj UI
     updateUI();
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Sprawdź czy trzeba zresetować dane
-    shouldResetData();
-
-    // Zaktualizuj UI
-    updateUI();
-
-    // 👇 DODAJ TE 3 LINIE
     drawChallengeBtn.addEventListener('click', handleDrawChallenge);
     completeBtn.addEventListener('click', handleCompleteChallenge);
     showHistoryBtn.addEventListener('click', handleShowHistory);
+    resetChallengeBtn.addEventListener('click', handleResetChallenge);
 });
