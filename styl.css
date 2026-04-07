@@ -1,6 +1,4 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -50,8 +48,17 @@ main {
     gap: 30px;
 }
 
+footer {
+    margin-top: 270px;
+    text-align: center;
+    border-radius: 100px;
+    box-shadow: black 15px 15px 30px;
+    height: 150px;
+    background: rgb(108, 168, 28);
+}
+
 /* Przyciski */
-.przycisk-glowny, .przycisk-pomocniczy, .przycisk-sukces {
+.przycisk-glowny, .przycisk-pomocniczy, .przycisk-sukces{
     padding: 15px 30px;
     border: none;
     border-radius: 50px;
@@ -75,13 +82,25 @@ main {
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
-.przycisk-pomocniczy {
+.przycisk-pomocniczy, .przycisk-pomocniczy2 {
     background: #f8f9fa;
     color: #495057;
     border: 2px solid #dee2e6;
 }
+.przycisk-pomocniczy2 {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  
+    min-width: 200px;
+}
 
-.przycisk-pomocniczy:hover {
+.przycisk-pomocniczy:hover, .przycisk-pomocniczy2:hover {
     background: #e9ecef;
     border-color: #adb5bd;
 }
